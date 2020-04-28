@@ -12,6 +12,9 @@ from models import storage
 import itertools
 
 
+app_views.url_map.strict_slashes = False
+
+
 @app_views.route("/status")
 def status():
     """returns a JSON"""
