@@ -44,9 +44,9 @@ def create_state():
     """Add new object state to engine"""
     new_dict = request.get_json(silent=True)
     if new_dict == {}:
-        return jsonify({"Error": "Not a JSON"}), 400
+        return ("Not a JSON"), 400
     elif 'name' not in new_dict:
-        return jsonify({"Error": "Missing name"}), 400
+        return ("Missing name"), 400
     else:
         new_state = State(**new_dict)
         storage.new(new_state)
@@ -59,7 +59,7 @@ def update_state(state_id):
     """Update instance of state"""
     update = request.get_json(silent=True)
     if update == {}:
-        return jsonify({"Error": "Not a JSON"}), 400
+        return ("Not a JSON"), 400
     states = storage.all('State')
     new_state = None
     for item_state in states:
