@@ -6,10 +6,7 @@ from models import storage
 from flask import jsonify, abort, request
 
 
-app_views.url_map.strict_slashes = False
-
-
-@app_views.route("/states", methods=['GET'])
+@app_views.route("/states", methods=['GET'], strict_slashes=False)
 def get_states_all():
     """Retrieves the list of all State"""
     data = storage.all('State')
@@ -17,7 +14,7 @@ def get_states_all():
     return jsonify(states)
 
 
-@app_views.route("/states/<state_id>", methods=['GET'])
+@app_views.route("/states/<state_id>", methods=['GET'], strict_slashes=False)
 def get_state(state_id):
     """Retrieves a State object specific or error 404"""
     data = storage.all('State')
@@ -27,7 +24,10 @@ def get_state(state_id):
     abort(404)
 
 
-@app_views.route("/states/<state_id>", methods=['DELETE'])
+@app_views.route(
+        "/states/<state_id>",
+        methods=['DELETE'],
+        strict_slashes=False)
 def delete_state(state_id):
     """Deletes a State object or error 404"""
     data = storage.all('State')
@@ -39,7 +39,7 @@ def delete_state(state_id):
     abort(404)
 
 
-@app_views.route("/states", methods=['POST'])
+@app_views.route("/states", methods=['POST'], strict_slashes=False)
 def create_state():
     """Add new object state to engine"""
     new_dict = request.get_json(silent=True)
@@ -54,7 +54,7 @@ def create_state():
         return jsonify(new_state.to_dict()), 201
 
 
-@app_views.route("/states/<state_id>", methods=['PUT'])
+@app_views.route("/states/<state_id>", methods=['PUT'], strict_slashes=False)
 def update_state(state_id):
     """Update instance of state"""
     update = request.get_json(silent=True)

@@ -12,16 +12,13 @@ from models import storage
 import itertools
 
 
-app_views.url_map.strict_slashes = False
-
-
 @app_views.route("/status")
 def status():
     """returns a JSON"""
     return jsonify({"status": "OK"})
 
 
-@app_views.route("/stats")
+@app_views.route("/stats", strict_slashes=False)
 def stats():
     """retrieves the number of each objects by type"""
     clases = [Amenity, City, Place, Review, State, User]
