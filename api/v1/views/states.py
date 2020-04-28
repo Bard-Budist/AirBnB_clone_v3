@@ -74,4 +74,3 @@ def update_state(state_id):
             setattr(new_state, k, v)
             storage.save()
     return jsonify(new_state.to_dict())
-

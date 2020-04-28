@@ -33,4 +33,3 @@ def stats():
     for name, clase in zip(name_class, clases):
         dic[name] = storage.count(clase)
     return jsonify(dic)
-
