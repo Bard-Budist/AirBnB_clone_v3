@@ -12,7 +12,7 @@ from models import storage
 import itertools
 
 
-@app_views.route("/status", strict_slashes=False)
+@app_views.route("/status")
 def status():
     """returns a JSON"""
     return jsonify({"status": "OK"})
