@@ -4,6 +4,7 @@ from api.v1.views import app_views
 from models.state import State
 from models import storage
 from flask import jsonify, abort, request
+from datetime import datetime
 
 
 @app_views.route("/states", methods=['GET'], strict_slashes=False)
@@ -69,6 +70,9 @@ def update_state(state_id):
     if not new_state:
         abort(404)
     ignore = ['id', 'created_at', 'updated_at']
+    """new_state.to_dict().update({'updated_at': datetime.utcnow().strftime(time)})"""
+    new_state.save()
+    print("New State: {}".format(new_state))
     for k, v in update.items():
         if k not in ignore:
             setattr(new_state, k, v)
