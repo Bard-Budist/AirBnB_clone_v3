@@ -44,7 +44,7 @@ def delete_state(state_id):
 def create_state():
     """Add new object state to engine"""
     new_dict = request.get_json(silent=True)
-    if new_dict == {}:
+    if new_dict is None:
         return ("Not a JSON"), 400
     elif 'name' not in new_dict:
         return ("Missing name"), 400
@@ -59,7 +59,7 @@ def create_state():
 def update_state(state_id):
     """Update instance of state"""
     update = request.get_json(silent=True)
-    if update == {}:
+    if update is None:
         return ("Not a JSON"), 400
     states = storage.all('State')
     new_state = None
@@ -72,7 +72,6 @@ def update_state(state_id):
     ignore = ['id', 'created_at', 'updated_at']
     """new_state.to_dict().update({'updated_at': datetime.utcnow().strftime(time)})"""
     new_state.save()
-    print("New State: {}".format(new_state))
     for k, v in update.items():
         if k not in ignore:
             setattr(new_state, k, v)
