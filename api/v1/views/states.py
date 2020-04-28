@@ -70,7 +70,6 @@ def update_state(state_id):
     if not new_state:
         abort(404)
     ignore = ['id', 'created_at', 'updated_at']
-    """new_state.to_dict().update({'updated_at': datetime.utcnow().strftime(time)})"""
     new_state.save()
     for k, v in update.items():
         if k not in ignore:
