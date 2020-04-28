@@ -1,5 +1,8 @@
+# Emacs file remove
 *~
 .*~
+# Python Cache
 __pycache__
+# Other files
 file.json
 test_get_count.py
