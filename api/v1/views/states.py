@@ -59,7 +59,6 @@ def create_state():
 def update_state(state_id):
     """Update instance of state"""
     update = request.get_json(silent=True)
-    print(update)
     if update is None:
         return ("Not a JSON"), 400
     states = storage.all('State')
