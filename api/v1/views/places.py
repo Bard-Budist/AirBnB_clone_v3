@@ -54,13 +54,13 @@ def create_place(city_id):
     dict_request = request.get_json(silent=True)
     if dict_request is None:
         return "Not a JSON", 400
-    elif 'user_id' not in dict_request:
+    if 'user_id' not in dict_request:
         return "Missing user_id", 400
-    elif 'name' not in dict_request:
-        return "Missing name", 400
     user = storage.get('User', dict_request.get('user_id'))
     if user is None:
         abort(404)
+    elif 'name' not in dict_request:
+        return "Missing name", 400
     place = Place(**dict_request)
     storage.new(place)
     storage.save()
