@@ -76,6 +76,8 @@ def update_place(place_id):
     if dict_request is None:
         return "Not a JSON", 400
     place = storage.get('Place', place_id)
+    if place is None:
+        abort(404)
     ignore = ['id', 'user_id', 'city_id', 'created_at', 'updated_at']
     place.save()
     for k, v in dict_request.items():
