@@ -9,7 +9,8 @@ from flask import jsonify, request, abort
 
 @app_views.route(
         "/cities/<city_id>/places",
-        methods=['GET'])
+        methods=['GET'],
+        strict_slashes=False)
 def get_all_places(city_id):
     """Retrieves the list of all Place objects of a City"""
     city = storage.get('City', city_id)
@@ -22,7 +23,8 @@ def get_all_places(city_id):
 
 @app_views.route(
         "/places/<place_id>",
-        methods=['GET'])
+        methods=['GET'],
+        strict_slashes=False)
 def get_specific_place(place_id):
     """Retrieves a Place objec"""
     place = storage.get('Place', place_id)
@@ -33,7 +35,8 @@ def get_specific_place(place_id):
 
 @app_views.route(
         "/places/<place_id>",
-        methods=['DELETE'])
+        methods=['DELETE'],
+        strict_slashes=False)
 def delete_place(place_id):
     """Deletes a Place object"""
     place = storage.get('Place', place_id)
@@ -46,7 +49,8 @@ def delete_place(place_id):
 
 @app_views.route(
         "/cities/<city_id>/places",
-        methods=['POST'])
+        methods=['POST'],
+        strict_slashes=False)
 def create_place(city_id):
     """Creates a Place"""
     city = storage.get('City', city_id)
@@ -60,7 +64,7 @@ def create_place(city_id):
     user = storage.get('User', dict_request.get('user_id'))
     if user is None:
         abort(404)
-    elif 'name' not in dict_request:
+    if 'name' not in dict_request:
         return "Missing name", 400
     place = Place(**dict_request)
     storage.new(place)
@@ -70,7 +74,8 @@ def create_place(city_id):
 
 @app_views.route(
         "/places/<place_id>",
-        methods=['PUT'])
+        methods=['PUT'],
+        strict_slashes=False)
 def update_place(place_id):
     """Updates a Place object"""
     dict_request = request.get_json(silent=True)
