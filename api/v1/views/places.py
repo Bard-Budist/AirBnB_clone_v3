@@ -15,10 +15,8 @@ def get_all_places(city_id):
     city = storage.get('City', city_id)
     if city is None:
         abort(404)
-    all_places = city.places
-    if all_places is None:
-        return jsonify({})
-    places = [obj.to_dict() for obj in all_places]
+    all_es = storage.all('Place').values()
+    places = [obj.to_dict() for obj in all_es if obj.city_id == city_id]
     return jsonify(places)
 
 
