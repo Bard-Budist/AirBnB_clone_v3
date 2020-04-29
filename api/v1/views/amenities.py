@@ -8,6 +8,7 @@ from flask import jsonify, abort, request
 
 @app_views.route("/amenities", methods=['GET'])
 def get_amenities():
+    """Retrieves the list of all"""
     all_amenities = storage.all('Amenity').values()
     dict_amenities = [obj.to_dict() for obj in all_amenities]
     return jsonify(dict_amenities)
@@ -17,6 +18,7 @@ def get_amenities():
         "/amenities/<amenity_id>",
         methods=['GET'])
 def get_amenitie(amenity_id):
+    """Retrieves a Amenity object"""
     obj_ameni = storage.get(Amenity, amenity_id)
     if obj_ameni is None:
         abort(404)
@@ -28,6 +30,7 @@ def get_amenitie(amenity_id):
         "/amenities/<amenity_id>",
         methods=['DELETE'])
 def delete_ameniti(amenity_id):
+    """Deletes a Amenity object"""
     obj_ameni = storage.get(Amenity, amenity_id)
     if obj_ameni is None:
         abort(404)
@@ -41,6 +44,7 @@ def delete_ameniti(amenity_id):
         "/amenities",
         methods=['POST'])
 def create_amenity():
+    """Creates a Amenity"""
     dict_request = request.get_json(silent=True)
     if dict_request is None:
         return "Not JSON", 400
@@ -57,6 +61,7 @@ def create_amenity():
         "/amenities/<amenity_id>",
         methods=['PUT'])
 def update_amenity(amenity_id):
+    """Updates a Amenity objec"""
     dict_request = request.get_json(silent=True)
     if dict_request is None:
         return "Not JSON", 400
