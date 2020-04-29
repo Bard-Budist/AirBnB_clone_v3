@@ -91,5 +91,5 @@ def update_place(place_id):
     for k, v in dict_request.items():
         if k not in ignore:
             setattr(place, k, v)
-            storage.save()
-            return jsonify(place.to_dict())
+    storage.save()
+    return jsonify(place.to_dict())
