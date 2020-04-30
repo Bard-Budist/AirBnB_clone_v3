@@ -268,6 +268,7 @@ File Name|Task Name|Task Description
 [**`api/v1/views/users.py`**](https://github.com/Bard-Budist/AirBnB_clone_v3/blob/master/api/v1/views/users.py), [**`api/v1/views/__init__.py`**](https://github.com/Bard-Budist/AirBnB_clone_v3/blob/master/api/v1/views/__init__.py)|**10. User**|Create a new view for User object that handles all default RestFul API actions
 [**`api/v1/views/places.py`**](https://github.com/Bard-Budist/AirBnB_clone_v3/blob/master/api/v1/views/places.py), [**`api/v1/views/__init__.py`**](https://github.com/Bard-Budist/AirBnB_clone_v3/blob/master/api/v1/views/__init__.py)|**11. Place**|Create a new view for Place objects that handles all default RestFul API actions
 [**`api/v1/views/places_reviews.py`**](https://github.com/Bard-Budist/AirBnB_clone_v3/blob/master/api/v1/views/places_reviews.py), [**`api/v1/views/__init__.py`**](https://github.com/Bard-Budist/AirBnB_clone_v3/blob/master/api/v1/views/__init__.py)|**12. Reviews**|Create a new view for Review object that handles all default RestFul API actions
+[**`api/v1/app.py`**](https://github.com/Bard-Budist/AirBnB_clone_v3/blob/master/api/v1/app.py)|**13. HTTP access control (CORS)**|Create a new view for Review object that handles all default RestFul API actions
 
 ## Author
 
