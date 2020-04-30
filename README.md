@@ -264,6 +264,7 @@ File Name|Task Name|Task Description
 [**`api/v1/app.py`**](https://github.com/Bard-Budist/AirBnB_clone_v3/blob/master/api/v1/app.py)|**6. Not found**|In api/v1/app.py, create a handler for 404 errors that returns a JSON-formatted 404 status code response. The content should be: "error": "Not found"
 [**`api/v1/views/states.py`**](https://github.com/Bard-Budist/AirBnB_clone_v3/blob/master/api/v1/views/states.py), [**`api/v1/views/__init__.py`**](https://github.com/Bard-Budist/AirBnB_clone_v3/blob/master/api/v1/views/__init__.py)|**7. State**|Create a new view for State objects that handles all default RestFul API actions
 [**`api/v1/views/cities.py`**](https://github.com/Bard-Budist/AirBnB_clone_v3/blob/master/api/v1/views/cities.py), [**`api/v1/views/__init__.py`**](https://github.com/Bard-Budist/AirBnB_clone_v3/blob/master/api/v1/views/__init__.py)|**8. City**|Same as State, create a new view for City objects that handles all default RestFul API actions
+[**`api/v1/views/amenities.py`**](https://github.com/Bard-Budist/AirBnB_clone_v3/blob/master/api/v1/views/amenities.py), [**`api/v1/views/__init__.py`**](https://github.com/Bard-Budist/AirBnB_clone_v3/blob/master/api/v1/views/__init__.py)|**9. Amenitiy**|Create a new view for Amenity objects that handles all default RestFul API actions
 
 ## Author
 
