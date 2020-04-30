@@ -96,7 +96,7 @@ the application (achieved by calls on the `storage` object defined above).
 The HolbertonBnB console can be run both interactively and non-interactively.
 To run the console in non-interactive mode, pipe any command(s) into an execution of the file `console.py` at the command line.
 
-``` python
+``` bash
 $ echo "help" | ./console.py
 (hbnb)
 Documented commands (type help <topic>):
@@ -109,13 +109,13 @@ $
 
 Alternatively, to use the HolbertonBnB console in interactive mode, run the file `console.py` by itself:
 
-``` python
+``` bash
 ./console.py
 ```
 
 While running in interactive mode, the console displays a prompt for input:
 
-``` python
+``` bash
 $ ./console.py
 (hbnb)
 ```
@@ -123,13 +123,13 @@ $ ./console.py
 To quit the console, enter the command `quit`, or input an EOF signal
 (`ctrl-D`).
 
-``` python
+``` bash
 $ ./console.py
 (hbnb) quit
 $
 ```
 
-```python
+```bash
 $ ./console.py
 (hbnb) EOF
 $
@@ -145,7 +145,7 @@ The HolbertonBnB console supports the following commands:
 
 - Usage: `create <class> <param 1 name>=<param 1 value> <param 2 name>=<param 2 value> ...`
 
-``` python
+``` bash
 $ ./console.py
 (hbnb) create BaseModel
 119be863-6fe5-437e-a180-b9892e8746b8
@@ -167,7 +167,7 @@ Model", "id": "119be863-6fe5-437e-a180-b9892e8746b8"}, {'id': 'd80e0344-63eb-43
 
 Prints the string representation of a class instance based on a given id.
 
-``` python
+``` bash
 $ ./console.py
 (hbnb) create User
 1e32232d-5a63-4d92-8092-ac3240b29f46
@@ -265,6 +265,9 @@ File Name|Task Name|Task Description
 [**`api/v1/views/states.py`**](https://github.com/Bard-Budist/AirBnB_clone_v3/blob/master/api/v1/views/states.py), [**`api/v1/views/__init__.py`**](https://github.com/Bard-Budist/AirBnB_clone_v3/blob/master/api/v1/views/__init__.py)|**7. State**|Create a new view for State objects that handles all default RestFul API actions
 [**`api/v1/views/cities.py`**](https://github.com/Bard-Budist/AirBnB_clone_v3/blob/master/api/v1/views/cities.py), [**`api/v1/views/__init__.py`**](https://github.com/Bard-Budist/AirBnB_clone_v3/blob/master/api/v1/views/__init__.py)|**8. City**|Same as State, create a new view for City objects that handles all default RestFul API actions
 [**`api/v1/views/amenities.py`**](https://github.com/Bard-Budist/AirBnB_clone_v3/blob/master/api/v1/views/amenities.py), [**`api/v1/views/__init__.py`**](https://github.com/Bard-Budist/AirBnB_clone_v3/blob/master/api/v1/views/__init__.py)|**9. Amenitiy**|Create a new view for Amenity objects that handles all default RestFul API actions
+[**`api/v1/views/users.py`**](https://github.com/Bard-Budist/AirBnB_clone_v3/blob/master/api/v1/views/users.py), [**`api/v1/views/__init__.py`**](https://github.com/Bard-Budist/AirBnB_clone_v3/blob/master/api/v1/views/__init__.py)|**10. User**|Create a new view for User object that handles all default RestFul API actions
+[**`api/v1/views/places.py`**](https://github.com/Bard-Budist/AirBnB_clone_v3/blob/master/api/v1/views/places.py), [**`api/v1/views/__init__.py`**](https://github.com/Bard-Budist/AirBnB_clone_v3/blob/master/api/v1/views/__init__.py)|**11. Place**|Create a new view for Place objects that handles all default RestFul API actions
+[**`api/v1/views/places_reviews.py`**](https://github.com/Bard-Budist/AirBnB_clone_v3/blob/master/api/v1/views/places_reviews.py), [**`api/v1/views/__init__.py`**](https://github.com/Bard-Budist/AirBnB_clone_v3/blob/master/api/v1/views/__init__.py)|**12. Reviews**|Create a new view for Review object that handles all default RestFul API actions
 
 ## Author
 
